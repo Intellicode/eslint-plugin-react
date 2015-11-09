@@ -55,7 +55,7 @@ ruleTester.run('no-unused-styles', rule, {
       jsx: true
     },
     errors: [{
-      message: 'Component should use es6 class instead of createClass'
+      message: 'Component contains unused styles'
     }]
   }
 ]});
