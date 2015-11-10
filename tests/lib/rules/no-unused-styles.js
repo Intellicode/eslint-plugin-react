@@ -22,7 +22,7 @@ ruleTester.run('no-unused-styles', rule, {
 
   valid: [{
     code: [
-      'const styles = Stylesheet.create({',
+      'const styles = StyleSheet.create({',
       '  name: {}',
       '})',
       'const Hello = React.createClass({',
@@ -40,7 +40,7 @@ ruleTester.run('no-unused-styles', rule, {
 
   invalid: [{
     code: [
-      'const styles = Stylesheet.create({',
+      'const styles = StyleSheet.create({',
       '  name: {}',
       '})',
       'const Hello = React.createClass({',
