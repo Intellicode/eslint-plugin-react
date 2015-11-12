@@ -36,16 +36,35 @@ ruleTester.run('no-unused-styles', rule, {
       classes: true,
       jsx: true
     }
+  }, {
+    code: [
+      'const styles = StyleSheet.create({',
+      '  text: {}',
+      '})',
+      'const Hello = React.createClass({',
+      '  propTypes: {',
+      '    textStyle: Text.propTypes.style,',
+      '  },',
+      '  render: function() {',
+      '    return <Text style={[styles.text, textStyle]}>Hello {this.props.name}</Text>;',
+      '  }',
+      '});'
+    ].join('\n'),
+    parser: 'babel-eslint',
+    ecmaFeatures: {
+      classes: true,
+      jsx: true
+    }
   }],
 
   invalid: [{
     code: [
       'const styles = StyleSheet.create({',
-      '  name: {}',
+      '  text: {}',
       '})',
       'const Hello = React.createClass({',
       '  render: function() {',
-      '    return <Text>Hello {this.props.name}</Text>;',
+      '    return <Text style={styles.b}>Hello {this.props.name}</Text>;',
       '  }',
       '});'
     ].join('\n'),
