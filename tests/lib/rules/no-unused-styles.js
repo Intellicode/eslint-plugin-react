@@ -27,7 +27,7 @@ ruleTester.run('no-unused-styles', rule, {
       '})',
       'const Hello = React.createClass({',
       '  render: function() {',
-      '    return <View style={styles.name}>Hello {this.props.name}</View>;',
+      '    return <Text style={styles.name}>Hello {this.props.name}</Text>;',
       '  }',
       '});'
     ].join('\n'),
