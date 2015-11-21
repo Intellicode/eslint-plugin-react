@@ -74,7 +74,7 @@ ruleTester.run('no-unused-styles', rule, {
       jsx: true
     },
     errors: [{
-      message: 'Component contains unused styles'
+      message: 'Unused style detected: styles.text'
     }]
   }
 ]});
